@@ -8,7 +8,11 @@ jobs:
   my-simple-job:
     runs-on: ubuntu-latest
     steps:
-        - name: tell hello-world
+        - name: checkout the repo
           uses: actions/checkout@v3
-        - name: echo hello-world
-          run: echo "hello-world"
+        
+        - name: Build
+          run: go build -o main_build go_log.go
+
+        - name: Test
+          run: go test 
