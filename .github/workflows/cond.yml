@@ -1,0 +1,12 @@
+name: exersice-4-cond
+run-name: ${{ github.actor }}
+on:
+  push:
+    paths:
+      - abc.txt
+jobs:
+  cond-job:
+    runs-on: ubuntu-latest
+
+
+
