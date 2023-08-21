@@ -22,9 +22,9 @@ jobs:
           run: go test go_log_test.go go_log.go
 
         
-  run-script:
+  build-and-run-script:
     runs-on: ubuntu-latest
-    needs: build-test-job
+    needs: test-job
     steps:
       - uses: actions/checkout@v3
     
