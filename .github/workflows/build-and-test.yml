@@ -46,6 +46,7 @@ jobs:
   tell-secret-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secret.MY_SECRET_USERNAME }}
+      - name: for chief Gilad
+        run: echo ${{ secrets.MY_SECRET_USERNAME }}
 
         
