@@ -18,6 +18,6 @@ jobs:
         - name: Build
           run: go build -o main_build go_log.go
 
-        - name: Test with the Go CLI
-          run: go test
+        - name: Test the app
+          run: go test go_log_test.go go_log.go
         
