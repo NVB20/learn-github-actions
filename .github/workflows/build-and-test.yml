@@ -29,6 +29,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-test-job
     steps:
+      - uses: actions/checkout@v3
+    
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.16.x'
+
       - name: run script
         run: |
           ls -la
