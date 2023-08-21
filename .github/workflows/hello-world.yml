@@ -5,7 +5,7 @@ on:
     branches:
       - main
 jobs:
-  my-simple-job:
+  build-test-job:
     runs-on: ubuntu-latest
     steps:
         - name: checkout the repo
@@ -15,4 +15,4 @@ jobs:
           run: go build -o main_build go_log.go
 
         - name: Test
-          run: go test 
+          run: go mod init && go test 
