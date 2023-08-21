@@ -46,6 +46,6 @@ jobs:
   tell-secret-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo {{ secret.MY_SECRET_USERNAME }}
+      - run: echo ${{ secret.MY_SECRET_USERNAME }}
 
         
