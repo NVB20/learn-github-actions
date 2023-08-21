@@ -31,7 +31,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.16.x'
+          go-version: '${{ vars.MY_GO_VERSION }}''
 
       - name: Build
         run: go build -o main_build go_log.go    
@@ -43,13 +43,13 @@ jobs:
           ./cleanup_script.sh
           ls -la
 
-  tell-secret-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: for chief Gilad
-        run: |
-          echo ${{ secrets.MY_SECRET_USERNAME }}
-          echo ${{ secrets.MY_SECRET_UNREAL }}
+  # tell-secret-job:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: echo the secret
+  #       run: |
+  #         echo ${{ secrets.MY_SECRET_USERNAME }}
+  #         echo "if there are *** this is the secret encoded"
 
 
 
