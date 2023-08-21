@@ -47,6 +47,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: for chief Gilad
-        run: echo ${{ secrets.MY_SECRET_USERNAME }}
+        run: |
+          echo ${{ secrets.MY_SECRET_USERNAME }}
+          echo ${{ secrets.MY_SECRET_UNREAL }}
+
+
+
 
         
