@@ -7,6 +7,8 @@ on:
 jobs:
   cond-job:
     runs-on: ubuntu-latest
+    steps:
+      - run: echo "there where changes to abc.txt"
 
 
 
