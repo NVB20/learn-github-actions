@@ -27,5 +27,7 @@ jobs:
         - name: run script
           run: |
             ls -la
+            chmod +x some_script.sh
             ./some_script.sh
+            ls -la
         
