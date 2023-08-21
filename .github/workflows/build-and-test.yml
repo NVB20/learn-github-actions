@@ -39,8 +39,13 @@ jobs:
       - name: run script
         run: |
           ls -la
-          chmod +x some_script.sh
-          ./some_script.sh
+          chmod +x cleanup_script.sh
+          ./cleanup_script.sh
           ls -la
+
+  tell-secret-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo {{ secret.MY_SECRET_USERNAME }}
 
         
