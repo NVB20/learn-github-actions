@@ -31,7 +31,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v4
         with:
-          go-version: '${{ vars.MY_GO_VERSION }}''
+          go-version: '${{ vars.MY_GO_VERSION }}'
 
       - name: Build
         run: go build -o main_build go_log.go    
