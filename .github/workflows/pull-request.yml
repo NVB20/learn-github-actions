@@ -1,0 +1,18 @@
+name: merge-request-build-test
+run-name: terraform-aws-deploy-${{ github.actor }} 
+on:
+    pull_request:
+        types: [opened, synchronize]
+        branches:    
+            - main
+  
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - name: import code to action
+          uses: actions/checkout@v3
+
+    outputs:
+        workflow-completed: ${{ steps.build.outputs.workflow-completed }}      

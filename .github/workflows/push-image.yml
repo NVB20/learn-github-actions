@@ -2,8 +2,8 @@ name: build-and-push-image-dockerhub
 run-name: DockerHub-push-by-${{ github.actor }}
 on:
   push:
-    branches:
-      - 'main'
+    paths:
+    - Dockerfile
 
 jobs:
   docker:
@@ -25,4 +25,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/golang-logs:latest
+          tags:  ${{ secrets.DOCKERHUB_USERNAME }}/golang-logs:${{ github.sha }}
