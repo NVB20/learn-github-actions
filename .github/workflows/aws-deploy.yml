@@ -23,6 +23,10 @@ jobs:
           uses: hashicorp/setup-terraform@v1
           with:
             terraform_version: 1.5.5
+        
+        - name: navigate to terraform files
+          run: cd ./terraform
+
         - name: Terraform init
           run: terraform init
     
@@ -33,4 +37,5 @@ jobs:
           run: |
              terraform destroy -auto-approve 
              rm -rf .terraform
+             cd ..
         
