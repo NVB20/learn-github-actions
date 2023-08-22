@@ -46,6 +46,7 @@ jobs:
 
       - name: run script
         run: |
+          cd go-app
           ls -la
           chmod +x cleanup_script.sh
           ./cleanup_script.sh
