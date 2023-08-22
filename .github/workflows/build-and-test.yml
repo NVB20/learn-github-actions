@@ -24,7 +24,8 @@ jobs:
         
         - name: Test the app
           run: |
-            cd /go-app/
+            ls -l
+            cd go-app
             go test go_log_test.go go_log.go
             
         
