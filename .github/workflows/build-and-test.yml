@@ -24,7 +24,6 @@ jobs:
         
         - name: Test the app
           run: |
-            ls -l
             cd go-app
             go test go_log_test.go go_log.go
             
@@ -41,7 +40,9 @@ jobs:
           go-version: '${{ vars.MY_GO_VERSION }}'
 
       - name: Build
-        run: go build -o main_build go_log.go    
+        run: |
+          cd go-app
+          go build -o main_build go_log.go    
 
       - name: run script
         run: |
