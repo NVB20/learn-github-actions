@@ -1,5 +1,5 @@
 name: exersice-4-cond
-run-name: ${{ github.actor }}
+run-name: abc-changed-by-${{ github.actor }}
 on:
   push:
     paths:
