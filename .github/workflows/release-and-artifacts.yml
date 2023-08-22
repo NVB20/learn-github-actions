@@ -33,6 +33,7 @@ jobs:
     needs: create-artifact
     steps:
         - uses: actions/checkout@v3
+        
         - name: Get the binary
           uses: actions/download-artifact@v3
           with:
@@ -40,4 +41,4 @@ jobs:
             path: .
         
         - name: Test
-          run: 
+          run: ls -la
