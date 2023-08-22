@@ -23,8 +23,10 @@ jobs:
             go-version: '1.16.x'
         
         - name: Test the app
-          run: go test go_log_test.go go_log.go
-
+          run: |
+            cd /go-app/
+            go test go_log_test.go go_log.go
+            
         
   build-and-run-script:
     runs-on: ubuntu-latest
