@@ -24,20 +24,18 @@ jobs:
           with:
             terraform_version: 1.5.5
         
-        # - name: navigate to terraform files
-        #   run: |
-        #     cd ./terraform
-        #     ls
-
+        - name: navigate to terraform folder
+          run: cd terraform-config
+          
         - name: Terraform init
           run: terraform init
     
         - name: Terraform apply
           run: terraform apply -auto-approve
     
-        - name: Cleanup
-          run: |
-             terraform destroy -auto-approve 
-             rm -rf .terraform
-             cd ..
+        # - name: Cleanup
+        #   run: |
+        #      terraform destroy -auto-approve 
+        #      rm -rf .terraform
+             
         

@@ -1,6 +1,7 @@
 logtimes.json
 go_log
 *.pem
+abc.txt
 
 # Binaries for programs and plugins
 *.exe
