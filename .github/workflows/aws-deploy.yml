@@ -25,13 +25,15 @@ jobs:
             terraform_version: 1.5.5
         
         - name: navigate to terraform folder
-          run: cd terraform-config
-          
-        - name: Terraform init
-          run: terraform init
+          run: |
+            cd terraform-config
+            ls -la
+
+        - name: Terraform init 
+          run: terraform init -backend-config=./terraform-config
     
         - name: Terraform apply
-          run: terraform apply -auto-approve
+          run: terraform apply -auto-approve -backend-config=./terraform-config
     
         # - name: Cleanup
         #   run: |
