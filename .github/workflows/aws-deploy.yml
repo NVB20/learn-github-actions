@@ -12,11 +12,5 @@ jobs:
         - name: import code to action
           uses: actions/checkout@v3
        
-        - name: Deploy to Server 1
-          uses: appleboy/ssh-action@master
-          with:
-            key: ${ { secrets.EC2_SSH_KEY }}
-            host: ${ { secrets.HOST_DNS }}
-            username: ${ { secrets.USERNAME }}
-            #TARGET: ${ { secrets.TARGET_DIR }}
+        
         
