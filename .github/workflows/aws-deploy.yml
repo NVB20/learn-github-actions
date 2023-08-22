@@ -24,10 +24,10 @@ jobs:
           with:
             terraform_version: 1.5.5
         
-        - name: navigate to terraform files
-          run: |
-            cd ./terraform
-            ls
+        # - name: navigate to terraform files
+        #   run: |
+        #     cd ./terraform
+        #     ls
 
         - name: Terraform init
           run: terraform init
