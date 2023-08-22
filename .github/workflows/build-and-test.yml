@@ -20,7 +20,7 @@ jobs:
         - name: Setup Go
           uses: actions/setup-go@v4
           with:
-            go-version: '1.16.x'
+            go-version: '${{ vars.MY_GO_VERSION }}'
         
         - name: Test the app
           run: |
@@ -51,6 +51,9 @@ jobs:
           chmod +x cleanup_script.sh
           ./cleanup_script.sh
           ls -la
+
+    outputs:
+      workflow-completed: ${{ steps.build.outputs.workflow-completed }}      
 
   # tell-secret-job:
   #   runs-on: ubuntu-latest

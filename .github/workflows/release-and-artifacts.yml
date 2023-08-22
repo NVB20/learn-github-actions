@@ -1,0 +1,43 @@
+name: make-an-artifacte
+run-name: artifact-create-and-upload
+on:
+  workflow_run:
+    workflows: ["merge-request-build-test"]
+    types:
+        - completed   
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+
+        - name: Setup Go
+          uses: actions/setup-go@v4
+          with:
+            go-version: '${{ vars.MY_GO_VERSION }}'
+
+        - name: Build
+          run: |
+            cd go-app
+            go build -o main_build go_log.go
+
+        - name: Upload a Build Artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: go_log
+            path: ./go_log
+
+  test-artifact:
+    runs-on: ubuntu-latest
+    needs: create-artifact
+    steps:
+        - uses: actions/checkout@v3
+        - name: Get the binary
+          uses: actions/download-artifact@v3
+          with:
+            name: go_log
+            path: .
+        
+        - name: Test
+          run: 
